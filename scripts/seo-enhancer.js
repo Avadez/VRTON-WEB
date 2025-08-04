@@ -190,7 +190,13 @@ class SEOEnhancer {
                         
                         if (!hasStyleDimensions) {
                             // Set placeholder dimensions to prevent CLS
-                            element.style.aspectRatio = 'auto';
+                            // Set a default aspect ratio to prevent CLS
+                            const defaultAspectRatio = 16 / 9; // Placeholder ratio
+                            if (element.naturalWidth && element.naturalHeight) {
+                                element.style.aspectRatio = (element.naturalWidth / element.naturalHeight).toString();
+                            } else {
+                                element.style.aspectRatio = defaultAspectRatio.toString();
+                            }
                             
                             // Only set dimensions after load if not already set
                             const handleImageLoad = function() {
@@ -310,13 +316,9 @@ class SEOEnhancer {
         // Batch DOM reads first - avoid getComputedStyle in loops for performance
         iconElements.forEach(element => {
             // Check if element likely contains a Font Awesome icon based on classes
-            const classList = element.classList;
-            const isFontAwesome = classList.contains('fas') || 
-                                classList.contains('fab') || 
-                                classList.contains('far') || 
-                                classList.contains('fa');
-            
-            if (isFontAwesome && !element.textContent.trim() && !element.getAttribute('aria-label')) {
+            if (this.isFontAwesomeElement(element.classList) && 
+                !element.textContent.trim() && 
+                !element.getAttribute('aria-label')) {
                 elementsToUpdate.push(element);
             }
         });
