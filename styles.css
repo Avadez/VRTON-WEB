@@ -2441,7 +2441,7 @@ body.loaded section {
     position: relative;
     width: 25vh;
     height: 15vh;
-    background-size: 25vh 25vh;
+    background-size: 25vh 15vh;
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle;

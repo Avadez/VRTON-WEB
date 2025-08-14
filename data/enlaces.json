@@ -8,6 +8,26 @@
             "TextLink":"YouTube", 
             "Logo":"YT.svg",
             "link": "https://www.youtube.com/@VRTonOficial"
+        },
+        {
+            "TextLink":"Instagram", 
+            "Logo":"Instagram.svg",
+            "link": "https://www.instagram.com/vrtonof/"
+        },
+        {
+            "TextLink":"Twitter", 
+            "Logo":"twitter.svg",
+            "link": "https://x.com/vrtonof"
+        },
+        {
+            "TextLink":"tiktok", 
+            "Logo":"tiktok.svg",
+            "link": "https://www.tiktok.com/@vrtonoficial"
+        },
+        {
+            "TextLink":"Twitch", 
+            "Logo":"twitch.svg",
+            "link": "https://www.twitch.tv/vrtonof"
         }
     ]
 }
